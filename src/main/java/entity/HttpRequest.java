@@ -11,6 +11,12 @@ public class HttpRequest {
     private String body;
     private String path;
 
+    private HttpRequest ( Builder builder ) {
+        headers = builder.headers;
+        body = builder.body;
+        path = builder.path;
+    }
+
     public Map< String, String > getHeaders () {
         return headers;
     }
@@ -45,6 +51,10 @@ public class HttpRequest {
         public Builder path ( String path ) {
             this.path = path;
             return this;
+        }
+
+        public HttpRequest build() {
+            return new HttpRequest( this );
         }
 
         public static Builder newBuilder () {

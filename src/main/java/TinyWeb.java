@@ -18,7 +18,7 @@ public class TinyWeb {
         this.filters = filters;
     }
 
-    public HttpResponse handRequest ( HttpRequest httpRequest ) {
+    public HttpResponse handleRequest ( HttpRequest httpRequest ) {
         HttpRequest currentRequest = httpRequest;
         for ( Filter filter : filters ) {
             currentRequest = filter.doFilter( currentRequest );

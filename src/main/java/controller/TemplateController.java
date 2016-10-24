@@ -15,8 +15,6 @@ public abstract class TemplateController implements Controller {
         this.view = view;
     }
 
-    protected abstract Map< String, List< String > > doRequest ( HttpRequest httpRequest);
-
     public HttpResponse handleRequest ( HttpRequest request ) {
         Integer responseCode = 200;
         String responseBody = "";
@@ -37,4 +35,7 @@ public abstract class TemplateController implements Controller {
                 .responseCode( responseCode )
                 .build();
     }
+
+    protected abstract Map< String, List< String > > doRequest ( HttpRequest httpRequest);
+
 }

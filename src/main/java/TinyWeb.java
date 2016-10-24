@@ -27,6 +27,6 @@ public class TinyWeb {
         Controller controller = controllers.get( currentRequest.getPath() );
             if ( null == controller )
                 return null;
-            return controller.handleReauest( currentRequest );
+            return controller.handleRequest( currentRequest );
     }
 }

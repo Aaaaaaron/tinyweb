@@ -1,4 +1,5 @@
-import controller.TemplateController;
+package controller;
+
 import entity.HttpRequest;
 import entity.HttpResponse;
 import view.View;
@@ -16,10 +17,6 @@ public class GreetingController extends TemplateController {
         random = new Random();
     }
 
-    public HttpResponse handleReauest ( HttpRequest httpRequest ) {
-        return null;
-    }
-
     @Override
     protected Map< String, List< String > > doRequest ( HttpRequest httpRequest ) {
         Map< String, List< String > > helloModle = new HashMap< String, List< String > >();
@@ -31,7 +28,7 @@ public class GreetingController extends TemplateController {
         String[] names = namesCommaSeperated.split( "," );
         List< String > greetings = new ArrayList< String >();
         for ( String name : names ) {
-            greetings.add( name );
+            greetings.add( makeGreeting( name ) );
         }
         return greetings;
     }

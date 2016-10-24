@@ -7,5 +7,5 @@ import entity.HttpResponse;
  * Created by Melody on 2016/10/20.
  */
 public interface Controller {
-    public HttpResponse handleReauest ( HttpRequest httpRequest );
+    public HttpResponse handleRequest ( HttpRequest httpRequest );
 }
